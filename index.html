@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Math Quiz</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <!-- Start Screen -->
+    <section id="start-screen" class="center">
+      <h1 class="site-title">Math Quiz</h1>
+      <button id="start-btn" class="btn">Start</button>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz-screen" class="hidden">
+      <div class="topbar-quiz">
+        <div id="progress">Question 1 / 30</div>
+        <div id="timer">0.000 s</div>
+      </div>
+
+      <div id="question-area" class="card">
+        <div id="question-text" class="question-text"></div>
+        <input id="answer-input" class="answer-input" type="text" autocomplete="off" />
+        <div class="controls">
+          <button id="submit-btn" class="btn small">Submit</button>
+          <button id="skip-btn" class="btn small muted">Show Answer</button>
+        </div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Finish Screen -->
+    <section id="finish-screen" class="hidden center">
+      <h2>All questions complete</h2>
+      <div id="final-time" class="final-time"></div>
+      <button id="restart-btn" class="btn muted">Restart</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
