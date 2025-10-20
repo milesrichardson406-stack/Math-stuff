@@ -1,8 +1,13 @@
-// Math Quiz - script.js
-// 30 fixed questions. Answer input also accepts special game codes (see CODES list below).
-// Entering a matching game code will immediately replace the page with about:blank (per your instruction).
-// NOTE: I cannot include copyrighted game binaries or wasm here. If you want the codes to open
-// hosted wasm files, replace the location.href action with a call to open a hosted URL you legally own.
+const CODES = {
+  "DOOM3-D3WASM": {
+    name: "DOOM 3",
+    action: "https://milesrichardson406-stack.github.io/games/doom3/index.html"
+  },
+  "MOTHER3-M3WASM": {
+    name: "MOTHER 3",
+    action: "https://milesrichardson406-stack.github.io/games/mother3/index.html"
+  }
+};
 
 const QUESTIONS = [
   // Format: {q: "Question text", a: numericAnswer}
@@ -42,10 +47,6 @@ const QUESTIONS = [
 // NOTE: These codes DO NOT embed copyrighted content here.
 // They simply trigger the about:blank navigation per your instructions.
 // If you host the game files legally, replace the about:blank navigation with opening your hosted URL.
-const CODES = {
-  "DOOM3-D3WASM": { name: "DOOM 3 (D3WASM)", action: "about:blank" },
-  "MOTHER3-M3WASM": { name: "MOTHER 3 (M3WASM)", action: "about:blank" }
-};
 
 // UI elements
 const startBtn = document.getElementById('start-btn');
@@ -148,13 +149,6 @@ function submitAnswer(){
     feedback.textContent = "Wrong, try again";
   }
 }
-
-startBtn.addEventListener('click', () => {
-  startScreen.classList.add('hidden');
-  quizScreen.classList.remove('hidden');
-  showQuestion(0);
-  startTimer();
-});
 
 submitBtn.addEventListener('click', submitAnswer);
 answerInput.addEventListener('keydown', (e) => {
