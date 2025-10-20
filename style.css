@@ -1,0 +1,104 @@
+:root{
+  --bg:#0b0c0f;
+  --card:#0f1116;
+  --accent:#61dafb;
+  --text:#e6eef7;
+  --muted:#a3b0bf;
+  --danger:#ff6b6b;
+  --good:#6bed7b;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;}
+.hidden{display:none;}
+
+.site-title{
+  font-size:28px;
+  letter-spacing:1px;
+  margin:0 0 18px 0;
+  font-weight:700;
+  color:var(--accent);
+}
+
+/* Buttons */
+.btn{
+  background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.06);
+  padding:12px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+}
+.btn.small{padding:8px 12px;font-size:12px}
+.btn.muted{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)}
+.btn:active{transform:translateY(1px)}
+
+/* Quiz topbar */
+.topbar-quiz{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px;
+  max-width:900px;
+  margin:18px auto 0;
+  width:90%;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Card */
+.card{
+  background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.01));
+  border-radius:12px;
+  padding:22px;
+  max-width:900px;
+  margin:20px auto;
+  width:90%;
+  box-shadow:0 6px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Question text */
+.question-text{
+  font-size:18px;
+  margin-bottom:14px;
+  color:var(--text);
+}
+
+/* Answer input */
+.answer-input{
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:var(--glass);
+  color:var(--text);
+  outline:none;
+  margin-bottom:12px;
+}
+
+/* Feedback */
+.feedback{
+  height:20px;
+  margin-top:8px;
+  color:var(--danger);
+  font-size:14px;
+}
+
+/* Final time */
+.final-time{
+  font-size:20px;
+  color:var(--accent);
+  margin:12px 0 18px 0;
+}
+
+/* Responsive */
+@media (max-width:520px){
+  .site-title{font-size:22px}
+  .question-text{font-size:16px}
+  .btn{padding:10px 14px}
+}
